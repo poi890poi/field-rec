@@ -1,6 +1,8 @@
 # field-rec
 Notes, configurations, scripts for field recording, long ambient sounds, and sound editing.
 
+Processing and rendering long hours sound recordings requires special tools and methods. This document provides information about these methods and tools.
+
 ## Standard Processings
 ### LR to MS
 - Mid = (L + R) / 2 (-3.0 dB)
@@ -64,3 +66,32 @@ Make video out of a still image and audio track:
 ```shell
 ffmpeg -loop 1 -i image.jpg -i audio.flac -c:v libx264 -c:a copy -shortest -pix_fmt yuv420p output.mp4
 ```
+
+## Tools and Services Tested
+### Audacity
+- Your best friend. Does everything you need about sound editing, nice and fast.
+### Nyquist Plugins
+#### Dynamic Mirror
+- Generate volume envelope from a track to be applied on another track.
+- Has length limit of 30 minutes.
+### FFmpeg
+- Super fast for combinging or looping images, videos, audios.
+- Is able to completely eliminate quality degradation of transcoding. Copy source material as it is.
+### Shotcut
+- Unconditionally free.
+- GUI is extremely slow when video is long.
+### Davinci Resolve
+- While editing is smooth, exporting takes forever. (never succeeds)
+- Unable to find bit depth setting for FLAC audio codec.
+### archive.org
+- Not much limitation regarding length and file size. (4 hours and 4.0 GB tested)
+- Takes forever to upload. Resuming doesn't actually resume. It just try uploading whole file again. (never succeeds)
+### SoundCloud
+- Trial plan has length limit of 3 hours.
+### YouTube
+- Not much limitation regarding length and file size. (4 hours and 20.0 GB tested)
+- Doesn't support pure audio uploading.
+### Spotify
+- Commercial use only. Uploading is not supported for individual creator.
+### SoundOn
+- Not tested yet.
